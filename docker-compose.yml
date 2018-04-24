@@ -1,0 +1,20 @@
+version: '3.6'
+
+volumes:
+  ovpn-data:
+
+services:
+  ovpn:
+    restart: always
+    container_name: ovpn
+    image: kylemanna/openvpn
+    env_file: .env
+    volumes:
+      - ./data/openvpn:/etc/openvpn
+      - ./scripts/entrypoint.sh:/entrypoint.sh
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - "1194:1194/udp"
+      - "1194:1194"
+    entrypoint: /entrypoint.sh
