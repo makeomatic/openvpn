@@ -4,4 +4,4 @@ set -e
 
 : "${USERNAME:?Need to set USERNAME as non-empty, for example: user\@example.com}"
 
-docker exec openvpn ovpn_revokeclient $USERNAME
+docker exec ovpn ovpn_revokeclient $USERNAME

@@ -5,5 +5,5 @@ set -e
 : "${USERNAME:?Need to set USERNAME as non-empty, for example: user\@example.com}"
 
 # with a passphrase (recommended)
-docker exec openvpn easyrsa build-client-full $USERNAME
-docker exec openvpn ovpn_getclient $USERNAME > ./data/clients/$USERNAME.ovpn
+docker exec ovpn easyrsa build-client-full $USERNAME
+docker exec ovpn ovpn_getclient $USERNAME > ./data/clients/$USERNAME.ovpn
