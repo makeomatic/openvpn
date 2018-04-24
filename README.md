@@ -29,5 +29,5 @@ For use on core os we need to do pre-setup
 8. Install tunnelblick, for instance `brew install tunnelblick` or `brew cask install tunnelblick`
 9. Install ovpn configuration on your machine, for mac its as easy as `open ./config.ovpn`
 10. Adjust settings of tunnelblick:
-  * [ ] proxy all ipv4 traffic
+  * checkbox [ ] proxy all ipv4 traffic
   * configuration -> advanced -> [ ] allow changes to manually-set network settings
