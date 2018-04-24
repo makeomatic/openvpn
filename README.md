@@ -20,3 +20,8 @@ For use on core os we need to do pre-setup
 4. Create identity via `USERNAME=test ./scripts/add-client.sh`
 5. transfer `./data/clients/test.ovpn` to your machine & client of choice & enjoy vpn
 6. remove identity via `USERNAME=test ./scripts/remove-client.sh`
+7. Transfer .ovpn configuration to your compute, example:
+
+  ```sh
+  USERNAME=test ./scripts/transfer.sh > ./config.ovpn
+  ```
