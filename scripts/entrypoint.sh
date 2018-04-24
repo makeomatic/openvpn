@@ -1,15 +1,13 @@
 #!/bin/sh
 
-set -ex
-
-echo $1
+set -e
 
 : "${OVPN_URL:?Need to set OVPN_URL as non-empty, for example: vpn.example.com}"
 : "${OVPN_PROTO:?Need to set OVPN_PROTO to 'udp' or 'tcp'}"
 
 # prepare configuration if it doesn't already exist
 if [ ! -f /etc/openvpn/openvpn.conf ]; then
-  ovpn_genconfig -u "$OVPN_PROTO://$OVPN_URL"
+  ovpn_genconfig -u "$OVPN_PROTO://$OVPN_URL" -n 1.1.1.1 -n 1.0.0.1
 fi
 
 if [ ! -f /etc/openvpn/pki/private/$OVPN_URL.key ]; then

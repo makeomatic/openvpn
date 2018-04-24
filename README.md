@@ -17,4 +17,6 @@ For use on core os we need to do pre-setup
 
 2. Populate .env file with your data, sample configuration is included
 3. `docker-compose up -d` - launches your service
-4.
+4. Create identity via `USERNAME=test ./scripts/add-client.sh`
+5. transfer `./data/clients/test.ovpn` to your machine & client of choice & enjoy vpn
+6. remove identity via `USERNAME=test ./scripts/remove-client.sh`
