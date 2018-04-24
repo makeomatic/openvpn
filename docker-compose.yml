@@ -10,7 +10,7 @@ services:
     image: kylemanna/openvpn
     env_file: .env
     volumes:
-      - ./data/openvpn:/etc/openvpn
+      - ovpn-data:/etc/openvpn
       - ./scripts/entrypoint.sh:/entrypoint.sh
     cap_add:
       - NET_ADMIN
